@@ -1,0 +1,67 @@
+<br><br><br>
+<app-alert *ngIf="errFlag">Invalid credential. Please enter correct details.!!!</app-alert>
+<app-alert-success *ngIf="successFlag">Successfull Registered. Please Try to login with Username and Password!!!</app-alert-success>
+<div class="card mx-auto" style="width: 50rem;">
+    <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+    <div class="card-body">
+
+        <h3 class="card-title" style="text-align:center;margin: 20px;">Author Registration</h3>
+        <form class="was-validated" [formGroup]="authorForm" style="margin: 50px;"  onsubmit="event.preventDefault();">
+            <div class="form-row">
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip01">First name</label>
+                    <input type="text" class="form-control" formControlName="firstName" placeholder="First name"
+                        value="RAhul" required>
+                    
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip02">Last name</label>
+                    <input type="text" class="form-control"  formControlName="lastName"  placeholder="Last name"
+                        value="Otto" required>
+                   
+                </div>
+                <div class="col-md-12 mb-3">
+                    <label for="validationTooltipUsername">Email</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"   >@</span>
+                        </div>
+                        <input type="text" class="form-control" formControlName="authorEmail" placeholder="Username"
+                            aria-describedby="validationTooltipUsernamePrepend" required>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="validationTooltip03">Password</label>
+                    <input type="password" class="form-control"  formControlName="authorPass" required>
+                  
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="validationTooltip04">Confirm Password</label>
+                    <input type="password" class="form-control"  formControlName="authorConfirmPass"  required>
+                   
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="validationTooltip05">Gender</label>
+                    <input type="text" class="form-control"  formControlName="gender"  placeholder="Gender" required>
+                    
+                </div>
+            </div>
+            {{authorForm.controls['firstName'].value}}
+            {{authorForm.controls['lastName'].value}}
+            {{authorForm.controls['authorEmail'].value}}
+            {{authorForm.controls['authorPass'].value}}
+            {{authorForm.controls['gender'].value}}
+            <div style="text-align:center">
+                <button class="btn btn-primary" (click)="getSignUp()">Submit form</button><br>
+                Already have an account? Please here click to <a routerLink="login"> Login</a>
+            </div>
+        </form>
+
+
+
+
+    </div>
+</div>

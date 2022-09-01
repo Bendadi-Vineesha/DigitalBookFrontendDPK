@@ -1,0 +1,51 @@
+<br><br><br>
+<app-alert *ngIf="errFlag">Invalid credential. Please enter correct details.!!!</app-alert>
+<div class="card mx-auto" style="width: 25rem;">
+    <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+    <div class="card-body">
+
+        <h3 class="card-title" style="text-align:center;margin: 20px;">Author Login</h3>
+        <form class="needs-validation" style="margin: 50px;" novalidate onsubmit="event.preventDefault();">
+            <div class="form-row">
+
+                <div class="col-md-12 mb-3">
+                    <label for="authorEmail">Email</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="authorEmail">@</span>
+                        </div>
+                        <input type="text" class="form-control"  #authorEmail  id="authorEmail" value="deepak@gmail.com"
+                            placeholder="example@digibook.com" aria-describedby="validationTooltipUsernamePrepend"
+                            required>
+                        <div class="invalid-tooltip">
+                            Please choose a unique and valid Email.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-12 mb-3">
+                    <label for="validationTooltip03">Password</label>
+
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
+                        </div>
+                        <input type="password" class="form-control" #auhtorPassword  id="auhtorPassword" value="deepak" placeholder="******"
+                            aria-describedby="validationTooltipUsernamePrepend" required>
+                        <div class="invalid-tooltip">
+                            Please choose a unique and valid Password.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div style="text-align:center">
+                <!-- <button class="btn btn-primary" (click)="login/(">Login</button><br> -->
+                <button class="btn btn-primary" (click)="login(authorEmail.value ,auhtorPassword.value)">Login</button><br>
+                Don't have an account? Please here click to <a routerLink="signup"> Sign Up</a>
+            </div>
+        </form>
+    </div>
+</div>

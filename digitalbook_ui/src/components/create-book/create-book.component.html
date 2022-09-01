@@ -1,0 +1,97 @@
+<br>
+<app-alert *ngIf="errFlag">Invalid inputs. Please enter correct details.!!!</app-alert>
+<app-alert-success *ngIf="successFlag">You have Successfully saved you book. Thank You.!!!</app-alert-success>
+<div class="card mx-auto" style="width: 50rem;">
+    <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+    <div class="card-body">
+
+        <h3 class="card-title" style="text-align:center;margin: 20px;">{{heading}}</h3>
+        <form class="was-validated" [formGroup]="bookForm" style="margin: 50px;" novalidate
+            onsubmit="event.preventDefault()">
+            <div class="form-row">
+                <div class="col-md-12 mb-3">
+                    <label for="validationTooltip01">Book name</label>
+                    <input type="text" class="form-control" formControlName="title" placeholder="Book name" value="Mark"
+                        required>
+
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="exampleFormControlTextarea1">Book Summary</label>
+                    <textarea class="form-control" formControlName="content" rows="3"></textarea>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip03">Publisher</label>
+                    <input type="text" class="form-control" formControlName="publisher" placeholder="Book Publication"
+                        required>
+
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip03">Release Date</label>
+                    <input type="date" class="form-control" formControlName="releaseDate" placeholder="15-Jan-2022"
+                        required>
+
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip01">Price</label>
+                    <input type="text" class="form-control" formControlName="price" placeholder="4569.9999" required>
+
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip02">Book Rating </label>
+                    <select class="custom-select" formControlName="rating" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+
+                    </select>
+
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip03">Category</label>
+                    <!-- <input type="text" class="form-control" formControlName="category"
+                        placeholder="Fantasy/Science/Drama/Thriller" required> -->
+                        <select class="custom-select" formControlName="category" required>
+                            <option value="Fantasy">Fantasy</option>
+                            <option value="Science">Science</option>
+                            <option value="Drama">Drama</option>
+                            <option value="Fiction">Fiction</option>
+                            <option value="Romance">Romance</option>
+                            <option value="Action">Action</option>
+                            <option value="Thriller">Thriller</option>
+    
+                        </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip03">Active</label>
+                    <!-- <input type="text" class="form-control" formControlName="active" placeholder="true/false" required> -->
+                    <select class="custom-select" formControlName="active" required>
+                        <option value="true">True</option>
+                        <option value="false">False</option>
+                      
+                    </select>
+                </div>
+            </div>
+
+
+            <div style="text-align:center">
+                <button class="btn btn-primary" (click)="createBook()">{{heading}}</button>
+            </div>
+        </form>
+
+
+
+
+    </div>
+</div>
